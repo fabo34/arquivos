@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Título do texto"
+         />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/txNome"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/txNum1"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/txNum2"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exibir Mensagem"
+        android:textColor="#F00"
+        android:onClick="exibirMensagem"
+        />
+
+</LinearLayout>
+
+
+
+
+package com.example.aula1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void exibirMensagem(View view) {
+
+        EditText etNome = findViewById(R.id.txNome);
+
+        EditText num1,num2;
+
+        num1 = findViewById(R.id.txNum1);
+        num2 = findViewById(R.id.txNum2);
+
+        int soma = Integer.parseInt(num1.getText().toString()) + Integer.parseInt(num2.getText().toString());
+
+        String exibirTotal = String.format("%d",soma);
+
+        Toast.makeText(this,exibirTotal,Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"Texto mais longo",Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"Texto mais curto",Toast.LENGTH_SHORT).show();
+
+        //Toast.makeText(this,etNome.getText(),Toast.LENGTH_LONG).show();
+    }
+}

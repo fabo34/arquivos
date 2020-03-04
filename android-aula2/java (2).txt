@@ -1,0 +1,44 @@
+package br.com.camargoaranha.myapplication;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void exibirDados(View view) {
+
+        EditText etNome;
+        RadioButton masc, fem;
+
+        String sexo ="";
+        String valor ="";
+
+        etNome = findViewById(R.id.idNome);
+
+        masc = findViewById(R.id.sexoMas);
+        fem =  findViewById(R.id.sexoFem);
+
+
+        if(masc.isChecked()) {
+            sexo = "Masculino";
+        }
+        else if(fem.isChecked()) {
+            sexo = "Feminino";
+        }
+
+        valor = "Nome: " + etNome.getText() + "\nSexo: " + sexo;
+
+        Toast.makeText(this, valor , Toast.LENGTH_LONG).show();
+
+    }
+}
