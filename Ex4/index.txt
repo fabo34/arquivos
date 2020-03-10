@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="ex4.php">
+    <label>insira o sálario:</label>
+    <input type="text" id="sal" name="sal">
+
+    <br>
+
+    <label>departamento :</label>
+
+    <select name="select">
+    <option value="operacional">Operacional</option>
+    <option value="desenvolvimento">Desenvolvimento</option>
+    </select>
+
+    <input type="submit" value="verificar">
+    </form>
+</body>
+</html>

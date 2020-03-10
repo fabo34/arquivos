@@ -1,0 +1,33 @@
+<?php 
+
+$sal=$_POST['sal'];
+$dep=$_POST['select'];
+$res;
+
+echo($sal);
+echo($dep);
+
+if($dep==1){
+
+  $res= $sal+(15x$sal)/100;
+  echo('O aumento no sálario será de 15%, o seu sálario atual será: R$'.$res.);
+
+
+}else if($dep==2){
+
+    if($sal>=1500 && $sal=<1750){
+
+        $res= $sal+(12x$sal)/100;
+        echo('O aumento no sálario será de 12%, o seu sálario atual será: R$'.$res.);
+
+    }else if($sal>=1750 && $sal=<2000){
+        $res= $sal+(10x$sal)/100;
+        echo('O aumento no sálario será de 10%, o seu sálario atual será: R$'.$res.);
+    }else if($sal=>2000){
+        $res= $sal+(7x$sal)/100;
+        echo('O aumento no sálario será de 7%, o seu sálario atual será: R$'.$res.);
+    }
+
+}
+
+?>
